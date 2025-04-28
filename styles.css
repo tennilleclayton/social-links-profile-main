@@ -127,18 +127,21 @@
   }
 
   .social-link {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
     font-weight: 600;
+    font-size: 14px;
     background-color: var(--color-links);
     color: var(--color-text);
     width: 100%;
     height: 45px;
     border: 0;
-    margin: 5px 0;
+    margin: 8px 0;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: "Inter", Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    text-decoration: none;
+    align-content: center;
+    text-align: center;
 
     &:hover {
       background-color: var(--color-links_hover);
