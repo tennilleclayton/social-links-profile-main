@@ -137,6 +137,8 @@
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 14px;
 
     &:hover {
       background-color: var(--color-links_hover);
