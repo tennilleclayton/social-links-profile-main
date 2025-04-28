@@ -1,3 +1,50 @@
+@layer fonts {
+  /* inter-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/inter-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* inter-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    src: url("fonts/inter-v18-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* inter-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src: url("fonts/inter-v18-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+}
+
+@layer colors {
+  :root {
+    --c-green: hsl(75, 94%, 57%);
+    --c-white: hsl(0, 0%, 100%);
+    --c-grey-700: hsl(0, 0%, 20%);
+    --c-grey-800: hsl(0, 0%, 12%);
+    --c-grey-900: hsl(0, 0%, 8%);
+
+    --color-bkg: var(--c-grey-900);
+    --color-accent: var(--c-green);
+    --color-card-bkg: var(--c-grey-800);
+    --color-links: var(--c-grey-700);
+    --color-links_hover: var(--c-green);
+    --color-links-text_hover: var(--c-grey-900);
+    --color-text: var(--c-white);
+  }
+}
+
 @layer global {
   *,
   *::before,
@@ -8,7 +55,12 @@
   body {
     margin: 0;
     background-color: var(--color-bkg);
-    color: var(--c-white);
+    color: var(--color-text);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   h1,
@@ -17,33 +69,78 @@
   p {
     margin: 0;
     line-height: 150%;
-    letter-spacing: 0;
+    /* letter-spacing: 0; */
   }
 
   img {
     display: block;
     max-width: 100%;
   }
-}
 
-@layer colors {
-  :root {
-    --c-green: hsl(75, 94%, 57%);
-    --c-white: hsl(0, 0%, 100%);
-    --c-grey-700: hsl(0, 0%, 20%);
-    ---c-grey-800: hsl(0, 0%, 12%);
-    --c-grey-900: hsl(0, 0%, 8%);
-
-    --color-bkg: var(--c-grey-900);
-  }
-}
-
-@layer layout {
   .attribution {
     font-size: 11px;
     text-align: center;
   }
   .attribution a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+@layer profile-card {
+  .profile-container {
+    background-color: var(--color-card-bkg);
+    padding: 40px;
+    width: 385px;
+    border-radius: 15px;
+  }
+
+  .profile-info {
+    display: grid;
+    justify-items: center;
+  }
+  .profile-pic {
+    clip-path: circle();
+    width: 90px;
+    margin-bottom: 30px;
+  }
+
+  .profile-info h1 {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .profile-location {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .profile-tagline {
+    color: var(--color-text);
+    font-weight: 400px;
+    letter-spacing: 0;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  .social-media-links {
+    display: grid;
+    margin-top: 10px;
+  }
+
+  .social-link {
+    font-weight: 600;
+    background-color: var(--color-links);
+    color: var(--color-text);
+    width: 100%;
+    height: 45px;
+    border: 0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-links_hover);
+      color: var(--c-grey-900);
+    }
   }
 }
